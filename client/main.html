@@ -16,7 +16,7 @@
       </div>
       <div class="col">
         <label>Client Age</label>
-        <select class="form-control" id="ageSelector">
+        <select name="age" class="form-control" id="ageSelector">
           <option>25</option>
           <option>30</option>
           <option>35</option>
@@ -33,6 +33,7 @@
     <ul>
       {{#each tasks}}
         {{> task}}
+        {{> age}}
       {{/each}}
     </ul>
 
@@ -43,6 +44,10 @@
 
 <template name="task">
   <li>{{text}}</li>
+</template>
+
+<template name="age">
+  <li>{{age}}</li>
 </template>
 
 <template name="button">

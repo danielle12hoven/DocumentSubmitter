@@ -15,17 +15,19 @@ Template.body.helpers({
 Template.body.events({
   'submit .new-task'(event) {
     // Prevent default browser form submit
-    // event.preventDefault();
+    event.preventDefault();
 
     // Get value from form element
     const target = event.target;
     const text = target.text.value;
+    const age = target.age.value;
 
     // Insert a task into the collection
     Tasks.insert({
-      text
+      text,
+      age
     });
-      console.log(text)
+      console.log(text, age)
 
     // Clear form
     target.text.value = '';
