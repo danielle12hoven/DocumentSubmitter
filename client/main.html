@@ -30,12 +30,16 @@
     {{> button}}
   </form>
 
-    <ul>
+    <div>
       {{#each tasks}}
-        {{> task}}
-        {{> age}}
+        Name: {{> task}},
+        Age: {{> age}}
+        <br />
+        <button class="delete" type="delete">Delete</button>
+        <br />
+        <br />
       {{/each}}
-    </ul>
+    </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -43,14 +47,15 @@
 
 
 <template name="task">
-  <li>{{text}}</li>
+  {{text}}
 </template>
 
 <template name="age">
-  <li>{{age}}</li>
+  {{age}}
 </template>
 
 <template name="button">
   <button type="submit" class="btn btn-primary">Submit</button>
 </template>
+
 

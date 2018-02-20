@@ -6,9 +6,10 @@ import './main.html';
 
 DocumentList = new Mongo.Collection('documents');
 
+
 Template.body.helpers({
   tasks() {
-    return Tasks.find({});
+    return Tasks.find({}, {sort: {createdAt: -1} });
   },
 });
 
@@ -25,11 +26,16 @@ Template.body.events({
     // Insert a task into the collection
     Tasks.insert({
       text,
-      age
+      age,
+      createdAt: new Date(),
     });
       console.log(text, age)
 
     // Clear form
     target.text.value = '';
   },
+   'click .delete'() {
+    Tasks.remove(this._id);
+    console.log(this)
+  }
 });
