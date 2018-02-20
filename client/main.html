@@ -7,16 +7,12 @@
 <body>
   <h1>BizzStream Document Subbmitter</h1>
   <br />
-<!-- 
-  {{> hello}}
- -->
 
-
-  <form>
+  <form class="new-task">
     <div class="row">
       <div class="col">
         <label for="formGroupExampleInput">Client Name</label>
-        <input type="text" class="form-control" placeholder="Name">
+        <input type="text" name="text" class="form-control" placeholder="Name">
       </div>
       <div class="col">
         <label>Client Age</label>
@@ -31,19 +27,25 @@
       </div>
     </div>
     <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
+    {{> button}}
   </form>
 
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.min.js"></script>
 </body>
-<!-- 
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template> -->
+
+<template name="task">
+  <li>{{text}}</li>
+</template>
+
+<template name="button">
+  <button type="submit" class="btn btn-primary">Submit</button>
+</template>
 

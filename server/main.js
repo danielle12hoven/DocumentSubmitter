@@ -5,9 +5,9 @@ Meteor.startup(() => {
 	//documents is the table name
 
 	// This line won't complete until the insert is done
-	DocumentList.insert({_id: 'document-2', name: 'Danielle', age: 25});
+	DocumentList.insert({ name: 'Danielle', age: 25});
 	// So this line will return something
-	const documents = DocumentList.findOne({_id: 'document-2', name: 'Danielle', age: 25});
+	const documents = DocumentList.findOne({name: 'Danielle', age: 25});
 	// Look ma, no callbacks!
 	console.log(documents);
 
