@@ -8,43 +8,73 @@
   <h1>BizzStream Document Subbmitter</h1>
   <br />
 
-  <form class="new-task">
-    <div class="row">
+  <div>
+    <form method="post" class="new-task">
+        <input type="file" name="file">
       <div class="col">
-        <label for="formGroupExampleInput">Client Name</label>
-        <input type="text" name="text" class="form-control" placeholder="Name">
+      </div>  
+      <div class="row">
+        <div class="col">
+          <label for="formGroupExampleInput">Client Name</label>
+          <input type="text" name="text" class="form-control" placeholder="Name">
+        </div>
+        <div class="col">
+          <label>Client Age</label>
+          <select name="age" class="form-control" id="ageSelector">
+            <option>25</option>
+            <option>30</option>
+            <option>35</option>
+            <option>40</option>
+            <option>45</option>
+            <option>50</option>
+        </select>
+        </div>
       </div>
-      <div class="col">
-        <label>Client Age</label>
-        <select name="age" class="form-control" id="ageSelector">
-          <option>25</option>
-          <option>30</option>
-          <option>35</option>
-          <option>40</option>
-          <option>45</option>
-          <option>50</option>
-      </select>
-      </div>
-    </div>
-    <br />
-    {{> button}}
-  </form>
+      {{> button}}
+      <br />
+      <br />
+    </form>
+  </div>
 
-    <div>
+  <div class="col-sm-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Document Details</div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Document Link</th>
+              <th></th>
+            </tr>
+          </thead>
       {{#each tasks}}
-        Name: {{> task}},
-        Age: {{> age}}
+          <tbody>
+            <tr>
+              <td>{{_id}}</td>
+              <td>Name: {{> task}}</td>
+              <td>Age: {{> age}}</td>
+              <td>File: {{> file}}</td>
+              <td><button class="delete" type="delete">Delete</button></td>
+            </tr>
+          </tbody>
         <br />
-        <button class="delete" type="delete">Delete</button>
+        
         <br />
         <br />
       {{/each}}
+        </table>
     </div>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 </body>
 
+<template name="file">
+  {{file}}
+</template>
 
 <template name="task">
   {{text}}

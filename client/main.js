@@ -3,9 +3,9 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { Tasks } from '../api/tasks.js';
 
 import './main.html';
+import './main.css';
 
 DocumentList = new Mongo.Collection('documents');
-
 
 Template.body.helpers({
   tasks() {
@@ -22,14 +22,17 @@ Template.body.events({
     const target = event.target;
     const text = target.text.value;
     const age = target.age.value;
+    const file = target.file.value
+	
 
     // Insert a task into the collection
     Tasks.insert({
       text,
       age,
+      file,
       createdAt: new Date(),
     });
-      console.log(text, age)
+      console.log("This is: ", text, age, file)
 
     // Clear form
     target.text.value = '';
