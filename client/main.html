@@ -1,11 +1,11 @@
 <head>
-  <title>publish_document</title>
+  <title>Maxedy</title>
   <!-- <script src="jquery-3.3.1.min.js"></script> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
-  <h1>BizzStream Document Subbmitter</h1>
+  <h1 class="new-task">Maxedy Document Submitter</h1>
   <br />
 
   <div>
@@ -36,39 +36,42 @@
     </form>
   </div>
 
-  <div class="col-sm-6">
-    <div class="panel panel-primary">
-      <div class="panel-heading">Document Details</div>
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Document Link</th>
-              <th></th>
-            </tr>
-          </thead>
-      {{#each tasks}}
-          <tbody>
-            <tr>
-              <td>{{_id}}</td>
-              <td>Name: {{> task}}</td>
-              <td>Age: {{> age}}</td>
-              <td>File: {{> file}}</td>
-              <td><button class="delete" type="delete">Delete</button></td>
-            </tr>
-          </tbody>
-        <br />
-        
-        <br />
-        <br />
-      {{/each}}
-        </table>
+<div id="table" class="container">
+  <div class="row">
+
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Document Details</div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Document Link</th>
+                <th></th>
+              </tr>
+            </thead>
+        {{#each tasks}}
+            <tbody>
+              <tr>
+                <td>{{_id}}</td>
+                <td>Name: {{> task}}</td>
+                <td>Age: {{> age}}</td>
+                <td>File: {{> file}}</td>
+                <td><button class="delete" type="delete">Delete</button></td>
+              </tr>
+            </tbody>
+        {{/each}}
+          </table>
+      </div>
     </div>
   </div>
+</div>
 
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 </body>
 

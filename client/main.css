@@ -1,7 +1,29 @@
 /* CSS declarations go here */
 label{color:#999;  padding-top: 5px; display:block; left:0; width:100%}
 
-.panel-heading{border-width:2px; border-radius:7px}
+.panel-heading{border-width:2px; border-radius:7px; width: 800px}
+
+.panel {
+
+}
+
+#table {
+	margin: 20px 0 0 auto;
+}
+
+div .panel-primary {
+	width: 800px;
+	/*border: none;*/
+}
+
+div .panel-heading {
+	width: 800px;
+}
+
+.table.table-bordered {
+	min-width: 800px;
+	width: 800px;
+}
 
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
@@ -9,7 +31,7 @@ label{color:#999;  padding-top: 5px; display:block; left:0; width:100%}
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td{border:2px solid #eee; vertical-align: middle;}
-.table-bordered{border-radius:7px; width:1000px;}
+.table-bordered{border-radius:7px; width:120%;}
 
 .form-control::-moz-placeholder {
 color: #999;
